@@ -733,6 +733,70 @@
   }
   .hero { animation: fadeUp 0.6s ease both; }
   .article-body { animation: fadeUp 0.6s 0.1s ease both; }
+
+  /* ── SOCIAL PROOF READERS ────────────────────────── */
+  .readers-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+  .readers-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #27ae60;
+    display: inline-block;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ── FLOATING READER NOTIFICATION ───────────────── */
+  .reader-notif {
+    position: fixed;
+    bottom: 80px;
+    left: 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    z-index: 99;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--ink-mid);
+    max-width: 220px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+  }
+  .reader-notif.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reader-notif-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #27ae60;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+  }
+  .reader-notif strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
 </style>
 </head>
 <body>
@@ -743,10 +807,16 @@
 <!-- Sticky CTA Bar -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-text">
-    <div class="sticky-bar-title">GlucoMax™ — Sin aguja. Sin tiras.</div>
-    <div class="sticky-bar-price">Solo <strong>$89.900</strong> · Pago al recibir</div>
+    <div class="sticky-bar-title">GlucoMax™ — Descuento exclusivo por este artículo</div>
+    <div class="sticky-bar-price">De $149.900 → <strong>$89.900</strong> · Tienda oficial</div>
   </div>
-  <a href="https://68c981-6f.myshopify.com/products/glucomax" class="sticky-bar-btn">Pedir ahora →</a>
+  <a href="https://68c981-6f.myshopify.com/products/glucomax" class="sticky-bar-btn">Reclamar descuento →</a>
+</div>
+
+<!-- Floating Reader Notification -->
+<div class="reader-notif" id="readerNotif">
+  <div class="reader-notif-dot"></div>
+  <span><strong id="readerCount">12</strong> personas leyendo ahora</span>
 </div>
 
 <!-- Advertorial Label -->
@@ -781,6 +851,10 @@
         <div class="byline-date">Bogotá, Colombia · domingo, 20 de abril de 2025</div>
       </div>
       <div class="byline-verified">✓ Verificado</div>
+    </div>
+    <div class="readers-badge">
+      <span class="readers-dot"></span>
+      <span id="bylineReaders">12 personas leyendo este artículo ahora</span>
     </div>
   </section>
 
@@ -924,11 +998,10 @@
     <p>Esa noche pedí el GlucoMax.</p>
     <p>Con pago contra entrega. Sin arriesgar un peso antes de tenerlo en mis manos.</p>
 
-    <!-- CTA INTERSTITIAL -->
     <div class="cta-wrap">
       <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
-        <strong>Quiero el GlucoMax — Pago al Recibir →</strong>
-        Mida su glucosa sin aguja · Envío gratis a toda Colombia
+        <strong>Reclamar mi descuento en la Tienda Oficial →</strong>
+        Por leer este artículo: $89.900 · Paga solo cuando llegue
       </a>
       <div class="trust-row">
         <div class="trust-item">
@@ -1047,9 +1120,12 @@
         </div>
         <div class="price-savings">Ahorra $60.000 · <strong>Menos de 2 meses de tiras Accu-Chek</strong></div>
         <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
-          <strong>Pedir con Pago Contra Entrega →</strong>
-          Envío gratis a toda Colombia · Paga solo cuando llegue
+          <strong>Reclamar mi descuento en la Tienda Oficial →</strong>
+          Por leer este artículo: precio especial de $89.900
         </a>
+        <p style="font-family:var(--font-ui);font-size:11px;color:var(--ink-light);margin-top:10px;line-height:1.5;text-align:center;">
+          Por leer este artículo, el precio especial de $89.900 está disponible en la tienda oficial.<br>Paga solo cuando llegue a su puerta.
+        </p>
         <div class="trust-row" style="margin-top: 16px;">
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -1167,12 +1243,12 @@
     <!-- FINAL CTA -->
     <div class="cta-wrap">
       <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
-        <strong>Quiero el GlucoMax — Pago al Recibir →</strong>
-        Envío gratis · Llega en 2 a 5 días hábiles a toda Colombia
+        <strong>Reclamar mi descuento en la Tienda Oficial →</strong>
+        Envío gratis · Paga solo cuando llegue a su puerta
       </a>
       <p class="cta-sub">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        No paga nada hasta tener el producto en sus manos. 30 días de garantía. Soporte en español por WhatsApp.
+        Por leer este artículo, el precio especial de $89.900 está disponible en la tienda oficial. 30 días de garantía.
       </p>
     </div>
 
@@ -1186,33 +1262,60 @@
 </main>
 
 <script>
-  // Reading Progress Bar
+  // ── READING PROGRESS ─────────────────────────────
   const progressBar = document.getElementById('readingProgress');
   const stickyBar = document.getElementById('stickyBar');
 
   window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = Math.min((scrollTop / docHeight) * 100, 100);
-    progressBar.style.width = progress + '%';
+    const pct = Math.min((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100, 100);
+    progressBar.style.width = pct + '%';
   });
 
-  // Sticky bar aparece SOMENTE quando o lead chega na oferta final
+  // ── STICKY BAR — aparece só na oferta final ───────
   const oferta = document.getElementById('ofertaFinal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        stickyBar.classList.add('visible');
-      } else {
-        // Se subir acima da oferta, esconde de novo
-        if (entry.boundingClientRect.top > 0) {
-          stickyBar.classList.remove('visible');
+  if (oferta) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          stickyBar.classList.add('visible');
+        } else {
+          if (entry.boundingClientRect.top > 0) {
+            stickyBar.classList.remove('visible');
+          }
         }
-      }
-    });
-  }, { threshold: 0.1 });
+      });
+    }, { threshold: 0.1 });
+    obs.observe(oferta);
+  }
 
-  observer.observe(oferta);
+  // ── READER COUNT — número crível entre 8 e 19 ────
+  const counts = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+  function randomCount() {
+    return counts[Math.floor(Math.random() * counts.length)];
+  }
+  function updateReaders() {
+    const n = randomCount();
+    const byline = document.getElementById('bylineReaders');
+    const notifCount = document.getElementById('readerCount');
+    if (byline) byline.textContent = n + ' personas leyendo este artículo ahora';
+    if (notifCount) notifCount.textContent = n;
+  }
+  updateReaders();
+  setInterval(updateReaders, 25000);
+
+  // ── FLOATING NOTIFICATION — aparece após 60s ──────
+  const notif = document.getElementById('readerNotif');
+  if (notif) {
+    setTimeout(() => {
+      function showNotif() {
+        updateReaders();
+        notif.classList.add('show');
+        setTimeout(() => { notif.classList.remove('show'); }, 6000);
+      }
+      showNotif();
+      setInterval(showNotif, 45000);
+    }, 60000);
+  }
 </script>
 
 </body>
