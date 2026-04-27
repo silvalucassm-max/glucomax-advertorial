@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Llevaba 14 años pinchándome el dedo cada mañana — GlucoMax</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ── RESET & BASE ─────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #1a1208;
+    --ink-mid:    #3d3428;
+    --ink-light:  #7a6f62;
+    --paper:      #faf8f4;
+    --paper-warm: #f5f0e8;
+    --paper-dark: #ede8df;
+    --red:        #c0392b;
+    --red-dark:   #962d23;
+    --red-light:  #fdf0ef;
+    --gold:       #b8962e;
+    --gold-light: #fdf8ec;
+    --border:     #d8d0c4;
+    --white:      #ffffff;
+
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Source Serif 4', Georgia, serif;
+    --font-ui:      'DM Sans', sans-serif;
+
+    --max-w: 680px;
+    --pad:   20px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── ADVERTORIAL LABEL ───────────────────────────── */
+  .adv-label {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 8px 16px;
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  /* ── PUBLICATION HEADER ──────────────────────────── */
+  .pub-header {
+    border-bottom: 3px double var(--ink);
+    padding: 16px var(--pad) 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+  .pub-logo {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.5px;
+  }
+  .pub-logo span { color: var(--red); }
+  .pub-stars {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+  .pub-stars svg { width: 14px; height: 14px; fill: var(--gold); }
+  .pub-rating {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-left: 4px;
+  }
+
+  /* ── MAIN WRAPPER ────────────────────────────────── */
+  .article-wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+
+  /* ── HERO ────────────────────────────────────────── */
+  .hero {
+    padding: 32px 0 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .hero-category {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-category::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--red);
+    opacity: 0.3;
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 6vw, 38px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero-deck {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding-left: 16px;
+    border-left: 3px solid var(--gold);
+  }
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  .byline-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--paper-dark);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink-mid);
+    flex-shrink: 0;
+  }
+  .byline-info { flex: 1; }
+  .byline-name {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .byline-date {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+  }
+  .byline-verified {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--red);
+    background: var(--red-light);
+    padding: 3px 8px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── IMAGE BLOCK ─────────────────────────────────── */
+  .img-block {
+    margin: 28px 0;
+    position: relative;
+  }
+  .img-placeholder {
+    width: 100%;
+    border-radius: 4px;
+    background: var(--paper-dark);
+    border: 1px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    text-align: center;
+    gap: 12px;
+  }
+  .img-placeholder-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.3;
+  }
+  .img-description {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--ink-light);
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 400px;
+  }
+  .img-description strong {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    margin-bottom: 4px;
+    font-style: normal;
+  }
+  .img-caption {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-top: 8px;
+    text-align: center;
+  }
+  .img-real {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* ── BODY TEXT ───────────────────────────────────── */
+  .article-body p {
+    margin-bottom: 22px;
+    color: var(--ink-mid);
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .article-body p:first-child { color: var(--ink); }
+  .article-body p strong { color: var(--ink); font-weight: 600; }
+  .article-body p em { font-style: italic; }
+
+  /* ── SECTION BREAK ───────────────────────────────── */
+  .section-break {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 36px 0 28px;
+  }
+  .section-break::before,
+  .section-break::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .section-break-ornament {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  /* ── SUB-HEADLINES ───────────────────────────────── */
+  .section-head {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 36px 0 18px;
+    letter-spacing: -0.3px;
+  }
+  .section-head.italic { font-style: italic; }
+
+  /* ── PULL QUOTE ──────────────────────────────────── */
+  .pull-quote {
+    margin: 32px -4px;
+    padding: 24px 20px;
+    background: var(--paper-warm);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    text-align: center;
+  }
+  .pull-quote-text {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 4.5vw, 22px);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .pull-quote-attr {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-top: 10px;
+  }
+
+  /* ── CALLOUT BOX ─────────────────────────────────── */
+  .callout {
+    margin: 28px 0;
+    padding: 20px 20px 20px 24px;
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+  }
+  .callout p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink);
+    margin: 0 !important;
+    line-height: 1.65;
+  }
+  .callout-label {
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  /* ── INDIGNATION BOX ─────────────────────────────── */
+  .indignation {
+    margin: 32px 0;
+    padding: 24px;
+    background: var(--red-light);
+    border: 1px solid rgba(192,57,43,0.2);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .indignation::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-family: var(--font-display);
+    font-size: 100px;
+    color: var(--red);
+    opacity: 0.08;
+    line-height: 1;
+  }
+  .indignation-text {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 4vw, 19px);
+    font-style: italic;
+    color: var(--red-dark);
+    line-height: 1.45;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .indignation-source {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--red);
+    opacity: 0.7;
+  }
+
+  /* ── STATISTIC CALLOUT ───────────────────────────── */
+  .stat-box {
+    margin: 28px 0;
+    padding: 20px;
+    background: var(--ink);
+    border-radius: 4px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 9vw, 52px);
+    font-weight: 700;
+    color: var(--paper);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-number span { color: var(--gold); }
+  .stat-label {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: rgba(250,248,244,0.7);
+    line-height: 1.4;
+  }
+
+  /* ── CTA BUTTON ──────────────────────────────────── */
+  .cta-wrap {
+    margin: 36px 0;
+    text-align: center;
+  }
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+    text-align: center;
+    transition: background 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta-btn:active { transform: scale(0.98); }
+  .cta-btn strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .cta-sub {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  .cta-sub svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    vertical-align: -1px;
+    margin-right: 3px;
+  }
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--ink-light);
+  }
+  .trust-item svg {
+    width: 13px;
+    height: 13px;
+    fill: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ── TESTIMONIALS ────────────────────────────────── */
+  .testimonials { margin: 8px 0 36px; }
+  .testimonial {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .testimonial:last-child { border-bottom: none; }
+  .testi-stars { display: flex; gap: 2px; margin-bottom: 10px; }
+  .testi-stars svg { width: 13px; height: 13px; fill: var(--gold); }
+  .testi-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--ink-mid);
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .testi-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--paper-dark);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-mid);
+    flex-shrink: 0;
+  }
+  .testi-name {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .testi-verified {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    color: var(--red);
+    font-weight: 500;
+  }
+  .testi-badge {
+    margin-left: auto;
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    border-radius: 100px;
+    padding: 2px 8px;
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── PRODUCT BOX ─────────────────────────────────── */
+  .product-box {
+    margin: 32px 0;
+    border: 2px solid var(--ink);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .product-box-header {
+    background: var(--ink);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .product-box-title {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--paper);
+  }
+  .product-box-badge {
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .product-box-body {
+    padding: 20px;
+    background: var(--white);
+  }
+  .product-name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .product-tagline {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink-light);
+    margin-bottom: 18px;
+  }
+  .product-features {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+  .product-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--ink-mid);
+    padding: 6px 0;
+    border-bottom: 1px solid var(--paper-dark);
+    line-height: 1.4;
+  }
+  .product-features li:last-child { border-bottom: none; }
+  .product-features li svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--red);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .price-old {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    color: var(--ink-light);
+    text-decoration: line-through;
+  }
+  .price-new {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--red);
+  }
+  .price-savings {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+  }
+  .price-savings strong { color: var(--red); }
+
+  /* ── DIVIDER ORNAMENTAL ──────────────────────────── */
+  .ornament-divider {
+    text-align: center;
+    margin: 40px 0 32px;
+    position: relative;
+  }
+  .ornament-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
+  }
+  .ornament-divider-inner {
+    display: inline-block;
+    background: var(--paper);
+    padding: 0 16px;
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--gold);
+    letter-spacing: 6px;
+  }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  .article-footer {
+    border-top: 3px double var(--border);
+    padding: 20px 0 40px;
+    margin-top: 40px;
+  }
+  .disclaimer {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    color: var(--ink-light);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ── STICKY CTA BAR ──────────────────────────────── */
+  .sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  .sticky-bar.visible { transform: translateY(0); }
+  .sticky-bar-text {
+    flex: 1;
+  }
+  .sticky-bar-title {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.2;
+  }
+  .sticky-bar-price {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: rgba(250,248,244,0.6);
+  }
+  .sticky-bar-price strong { color: var(--gold); }
+  .sticky-bar-btn {
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition: background 0.2s;
+  }
+
+  /* ── PROGRESS INDICATOR ──────────────────────────── */
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--red);
+    z-index: 200;
+    transition: width 0.1s linear;
+    width: 0%;
+  }
+
+  /* ── ANIMATIONS ──────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero { animation: fadeUp 0.6s ease both; }
+  .article-body { animation: fadeUp 0.6s 0.1s ease both; }
+</style>
+</head>
+<body>
+
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="readingProgress"></div>
+
+<!-- Sticky CTA Bar -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-text">
+    <div class="sticky-bar-title">GlucoMax™ — Sin aguja. Sin tiras.</div>
+    <div class="sticky-bar-price">Solo <strong>$89.900 COP</strong> · Pago al recibir</div>
+  </div>
+  <a href="https://68c981-6f.myshopify.com/products/glucomax" class="sticky-bar-btn">Pedir ahora →</a>
+</div>
+
+<!-- Advertorial Label -->
+<div class="adv-label">Publirreportaje</div>
+
+<!-- Publication Header -->
+<header>
+  <div class="pub-header">
+    <div class="pub-logo">Gluco<span>Max</span></div>
+    <div class="pub-stars">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span class="pub-rating">4.9 · 998 compras</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-wrap">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-category">Salud &amp; Bienestar</div>
+    <h1 class="hero-headline">Llevaba 14 años pinchándome el dedo cada mañana. Creí que no había otra opción. Estaba equivocada.</h1>
+    <p class="hero-deck">Lo que nadie me dijo cuando me diagnosticaron diabetes — y lo que la industria farmacéutica lleva 50 años ocultando a millones de pacientes como usted.</p>
+    <div class="byline">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagemperfil.webp?v=1777236179" alt="Carmen Restrepo" style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid var(--border);flex-shrink:0;">
+      <div class="byline-info">
+        <div class="byline-name">Carmen Restrepo</div>
+        <div class="byline-date">Bogotá, Colombia · domingo, 20 de abril de 2025</div>
+      </div>
+      <div class="byline-verified">✓ Verificado</div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+
+    <!-- IMAGE 1 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_1.webp?v=1777236179" alt="Carmen, 61 años, Bogotá — 14 años de monitoreo diario." class="img-real">
+      <p class="img-caption">Carmen, 61 años, Bogotá — 14 años de monitoreo diario.</p>
+    </div>
+
+    <p>Hay un momento, cada mañana, que odio.</p>
+    <p>Abro el cajón. Saco la lanceta. Y sé lo que viene.</p>
+    <p>El pinchazo.</p>
+    <p>Catorce años así. Todos los días. Sin excepción.</p>
+    <p>Al principio dolía. Después aprendí a aguantar. Y con los años, las puntas de los dedos dejaron de sentir igual. La piel se endureció. Los médicos lo llaman "callosidades." Yo lo llamo el precio de seguir viva.</p>
+
+    <div class="pull-quote">
+      <div class="pull-quote-text">"Lo que nadie me dijo cuando me diagnosticaron es que ese precio no era inevitable. Que había otra opción. Que siempre la hubo."</div>
+    </div>
+
+    <p>Soy Carmen. 61 años, Bogotá, diabética tipo 2 desde hace catorce años.</p>
+    <p>Cuando me diagnosticaron, el médico me enseñó a usar el glucómetro. La lanceta, la tira, la gota de sangre, el número en la pantalla.</p>
+    <p>Y me dijo: <strong>"Esto va a ser parte de su vida de ahora en adelante."</strong></p>
+    <p>Lo acepté. ¿Qué más podía hacer?</p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">Lo que nadie le dice es cómo se acumula.</h2>
+
+    <!-- IMAGE 2 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_2.webp?v=1777236179" alt="El gasto mensual en tiras reactivas puede superar los $180.000 pesos colombianos." class="img-real">
+      <p class="img-caption">El gasto mensual en tiras reactivas puede superar los $180.000 pesos colombianos.</p>
+    </div>
+
+    <p>Un pinchazo al día parece manejable.</p>
+    <p>Pero catorce años son más de diez mil pinchazos.</p>
+    <p>Y encima del dolor, está el gasto. Las tiras Accu-Chek cuestan más de cien mil pesos por cincuenta unidades. Las lancetas aparte. Lo que la EPS no cubre, aparte.</p>
+    <p>Un domingo hice el cálculo con papel y lápiz.</p>
+
+    <div class="stat-box">
+      <div class="stat-number">$20<span> millones</span></div>
+      <div class="stat-label">Lo que Carmen gastó en tiras e insumos en 14 años.<br>¿Cuánto lleva gastado usted?</div>
+    </div>
+
+    <p>Veinte millones de pesos. Solo en tiras e insumos.</p>
+    <p>Rodrigo me dijo que no pensara en eso. Que era necesario. Que era parte del tratamiento.</p>
+    <p>Tenía razón. Era necesario.</p>
+    <p>O eso creía yo.</p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">El domingo que mi hijo me dijo algo que me dejó sin palabras.</h2>
+
+    <!-- IMAGE 3 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_3.webp?v=1777236179" alt="La conversación que cambió todo." class="img-real">
+    </div>
+
+    <p>Andrés, mi hijo, tiene 38 años y es ingeniero.</p>
+    <p>Ese domingo fui a almorzar a su apartamento. Después del almuerzo, como siempre, me fui al baño a medirme el azúcar.</p>
+    <p>Cuando volví, Andrés me miró y me preguntó:</p>
+    <p><em>"Mami, ¿usted sabe por qué todavía tiene que pincharse el dedo?"</em></p>
+    <p>Le respondí lo de siempre. Que era la única forma confiable. Que la sangre era necesaria. Que así funcionaba.</p>
+    <p>Él negó con la cabeza.</p>
+    <p><strong>"No, mami. Eso no es completamente verdad."</strong></p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">Lo que la industria sabía desde los años 70 — y nunca le contaron.</h2>
+
+    <p>Andrés me contó que el primer glucómetro fue inventado en 1971.</p>
+    <p>Y desde el principio, el modelo de negocio era claro:</p>
+    <p><strong>El negocio no era el aparato. Era las tiras.</strong></p>
+    <p>Venden el glucómetro barato para que usted compre tiras por el resto de su vida. Cada diabético es un cliente que paga todos los meses, todos los años, sin parar.</p>
+
+    <div class="indignation">
+      <div class="indignation-text">"El producto era innovador, pero el verdadero negocio se generaba en la venta de tiras."</div>
+      <div class="indignation-source">— Registrado en la literatura médica sobre la historia de los glucómetros, años 1970</div>
+    </div>
+
+    <p>"¿Desde los años setenta?" le pregunté.</p>
+    <p>"Desde los años setenta, mami."</p>
+    <p>Me quedé callada.</p>
+    <p>Pensé en mis veinte millones de pesos. En mis diez mil pinchazos. En las veces que la EPS me dijo que las tiras "no estaban cubiertas."</p>
+
+    <div class="callout">
+      <div class="callout-label">Dato que pocos conocen</div>
+      <p>La Defensoría del Pueblo de Colombia reveló que entre el 60% y el 80% de los pacientes no reciben sus medicamentos completos por la EPS. Mientras el sistema falla, la industria cobra. Y el diabético paga — con dolor y con dinero.</p>
+    </div>
+
+    <p>Catorce años creyendo que no había otra opción.</p>
+    <p>Cuando sí la había.</p>
+    <p>Cuando siempre la había habido.</p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head italic">Entonces Andrés me mostró el GlucoMax.</h2>
+
+    <!-- IMAGE 4 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_4.webp?v=1777236179" alt="Solo coloca el dedo. 15 segundos. El resultado aparece en pantalla." class="img-real">
+      <p class="img-caption">Solo coloca el dedo. 15 segundos. El resultado aparece en pantalla.</p>
+    </div>
+
+    <p>Un aparato pequeño — del tamaño de un oxímetro de dedo. Pantalla grande y brillante. Sin agujas. Sin tiras. Sin sangre.</p>
+    <p>Funciona así: coloca el dedo, una luz infrarroja lee el azúcar a través de la piel, y en 15 segundos el número aparece en pantalla.</p>
+    <p>No necesita sangre porque no mide el azúcar desde afuera — la luz penetra la piel y la detecta directamente en el flujo sanguíneo. Es la misma tecnología que llevan años desarrollando en hospitales de Europa, ahora disponible para usar en casa.</p>
+    <p>Mi primera reacción fue desconfianza.</p>
+    <p><strong>"Andrés, eso parece demasiado bueno para ser verdad."</strong></p>
+    <p>"Por eso no te pido que confíes en mí, mami. Te pido que leas lo que dice este señor."</p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">Lo que me convenció no fue la marca. Fue un enfermero.</h2>
+
+    <!-- IMAGE 5 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_5.webp?v=1777236180" alt="Ricardo Ibáñez, enfermero — Pereira, Risaralda. Compra verificada." class="img-real">
+      <p class="img-caption">Ricardo Ibáñez, enfermero — Pereira, Risaralda. Compra verificada.</p>
+    </div>
+
+    <div class="indignation" style="background: #eef7f0; border-left-color: #1a7a4a;">
+      <div class="indignation-text" style="color: #1a5c38;">"Soy enfermero y me sorprendió la precisión comparada con glucómetros de clínica. Para monitoreo diario en casa es perfectamente confiable. Lo recomiendo a mis pacientes."</div>
+      <div class="indignation-source" style="color: #1a7a4a;">— Ricardo Ibáñez, Enfermero · Pereira, Risaralda ✓ Compra verificada</div>
+    </div>
+
+    <p>Un enfermero. Alguien que trabaja con glucómetros de clínica todos los días. Sin ningún motivo para recomendar algo que no funciona a sus propios pacientes.</p>
+    <p>Eso me hizo parar y leer con más cuidado.</p>
+    <p>Hernán Morales, de Barranquilla: <em>"El GlucoMax se pagó solo en dos meses. Ya no compro tiras."</em></p>
+    <p>Jorge Castellanos, de Medellín: <em>"Se lo regalé a mi mamá de 68 años. Le temblaban las manos con la aguja. Ahora se mide sola en segundos."</em></p>
+    <p>Martha Rodríguez, de Bogotá, doce años con diabetes: <em>"Mi endocrinólogo quedó sorprendido con la precisión."</em></p>
+
+    <div class="callout">
+      <div class="callout-label">La cuenta que me convenció</div>
+      <p>Una caja de tiras Accu-Chek cuesta más de $100.000 pesos. El GlucoMax cuesta $89.900. En menos de dos meses de tiras, el GlucoMax está pagado. Y después de eso — nunca más gasta un peso en insumos.</p>
+    </div>
+
+    <p>Esa noche pedí el GlucoMax.</p>
+    <p>Con pago contra entrega. Sin arriesgar un peso antes de tenerlo en mis manos.</p>
+
+    <!-- CTA INTERSTITIAL -->
+    <div class="cta-wrap">
+      <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
+        <strong>Quiero el GlucoMax — Pago al Recibir →</strong>
+        Mida su glucosa sin aguja · Envío gratis a toda Colombia
+      </a>
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Pago contra entrega
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          30 días de garantía
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Envío gratis
+        </div>
+      </div>
+    </div>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">Cuatro días después, llegó a mi puerta.</h2>
+
+    <!-- IMAGE 6 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_6.webp?v=1777236180" alt="Rodrigo soltó un silbido bajo. Los dos números eran casi idénticos." class="img-real">
+      <p class="img-caption">"Rodrigo soltó un silbido bajo. Los dos números eran casi idénticos."</p>
+    </div>
+
+    <p>Lo abrí en la sala. Rodrigo a mi lado, con cara de "a ver qué es esto."</p>
+    <p>Pequeño. Liviano. Pantalla grande y clara — perfecta para quien ya necesita lentes para leer.</p>
+    <p>Tres pasos. Solo tres.</p>
+    <p>Puse el dedo. Vi la luz encenderse. Conté los segundos.</p>
+    <p>El número apareció: <strong>127 mg/dL.</strong></p>
+    <p>Saqué el glucómetro de siempre. Me pinché — por última vez, aunque no lo sabía — y esperé.</p>
+    <p><strong>129 mg/dL.</strong></p>
+    <p>Dos puntos de diferencia.</p>
+    <p>Rodrigo soltó un silbido. Yo no dije nada.</p>
+    <p>Solo miré los dos aparatos sobre la mesa. El viejo, con su lanceta y su gotita de sangre seca. El nuevo, limpio, sin una sola marca.</p>
+    <p>Y pensé en catorce años.</p>
+
+    <div class="section-break"><div class="section-break-ornament">✦</div></div>
+
+    <h2 class="section-head">Tres semanas después, mi médico me preguntó qué había cambiado.</h2>
+
+    <!-- IMAGE 7 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_7.webp?v=1777236179" alt="Carmen mostrando el historial al médico." class="img-real">
+    </div>
+
+    <p>Le mostré el historial en la app del GlucoMax. Lecturas por día, por hora, con gráficas de evolución.</p>
+    <p>"¿Y esto es preciso?" me preguntó.</p>
+    <p>"Revíselo usted," le dije.</p>
+    <p>Comparó varias lecturas con mis últimos análisis de laboratorio.</p>
+    <p><strong>"Carmen, esto es perfectamente confiable para monitoreo diario."</strong></p>
+    <p>Salí del consultorio sintiéndome más liviana.</p>
+
+    <div class="ornament-divider">
+      <div class="ornament-divider-inner">✦ ✦ ✦</div>
+    </div>
+
+    <h2 class="section-head">Lo que pienso hoy.</h2>
+
+    <!-- IMAGE 8 -->
+    <div class="img-block">
+      <img src="https://cdn.shopify.com/s/files/1/0641/6154/6438/files/imagem_8.webp?v=1777236179" alt="Por primera vez en catorce años, mi mañana empieza diferente." class="img-real">
+      <p class="img-caption">"Por primera vez en catorce años, mi mañana empieza diferente."</p>
+    </div>
+
+    <p>No soy médica. Consulte siempre con su doctor antes de cambiar su tratamiento.</p>
+    <p>Pero lo que sí puedo decirle — porque lo viví — es esto:</p>
+    <p>Durante catorce años creí que el pinchazo era inevitable.</p>
+    <p>No lo era.</p>
+    <p>Era el precio de un modelo de negocio construido sobre mi dolor. Sobre el suyo. Sobre el de millones de diabéticos que nunca supieron que existía otra opción.</p>
+    <p>Ahora lo sé. <strong>Y usted también.</strong></p>
+    <p>Ya no abro ese cajón buscando la lanceta. Mis dedos se están recuperando.</p>
+    <p>Por primera vez en catorce años, mi mañana empieza diferente.</p>
+    <p><strong>Hágase un favor. No espere otros catorce años.</strong></p>
+
+    <!-- PRODUCT BOX -->
+    <div class="product-box">
+      <div class="product-box-header">
+        <div class="product-box-title">El Producto</div>
+        <div class="product-box-badge">40% OFF</div>
+      </div>
+      <div class="product-box-body">
+        <div class="product-name">GlucoMax™</div>
+        <div class="product-tagline">Monitor de Glucosa No Invasivo · Sin Aguja · Sin Tiras</div>
+        <ul class="product-features">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Mide glucosa, oxígeno en sangre y frecuencia cardíaca
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Resultado en 15 segundos — sin sangre, sin lanceta
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Pantalla AMOLED HD grande y fácil de leer
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            App con historial completo — comparte con su médico por WhatsApp
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Batería recargable — cero gasto mensual, para siempre
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Bluetooth universal — Android e iPhone
+          </li>
+        </ul>
+        <div class="price-row">
+          <span class="price-old">$149.900</span>
+          <span class="price-new">$89.900</span>
+        </div>
+        <div class="price-savings">Ahorra $60.000 · <strong>Menos de 2 meses de tiras Accu-Chek</strong></div>
+        <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
+          <strong>Pedir con Pago Contra Entrega →</strong>
+          Envío gratis a toda Colombia · Paga solo cuando llegue
+        </a>
+        <div class="trust-row" style="margin-top: 16px;">
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Pago al recibir
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            30 días garantía
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Envío 2–5 días
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <h2 class="section-head" style="margin-top: 40px;">Lo que dicen otros colombianos.</h2>
+    <div class="testimonials">
+
+      <div class="testimonial">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testi-text">"Soy enfermero y me sorprendió la precisión comparada con glucómetros de clínica. Para monitoreo diario en casa es perfectamente confiable. Lo recomiendo a mis pacientes."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div>
+            <div class="testi-name">Ricardo Ibáñez · Pereira, Risaralda</div>
+            <div class="testi-verified">✓ Compra verificada</div>
+          </div>
+          <div class="testi-badge">Profesional</div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testi-text">"Gasté años comprando tiras reactivas todos los meses. Con el GlucoMax ese gasto desapareció. Se pagó solo en dos meses. La precisión es impresionante."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">H</div>
+          <div>
+            <div class="testi-name">Hernán Morales · Barranquilla, Atlántico</div>
+            <div class="testi-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testi-text">"Se lo regalé a mi mamá de 68 años. Ella no podía medirse sola porque le temblaban las manos con la aguja. Ahora lo hace ella misma en segundos y se siente más segura."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">J</div>
+          <div>
+            <div class="testi-name">Jorge Castellanos · Medellín, Antioquia</div>
+            <div class="testi-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testi-text">"Llevo 12 años con diabetes y siempre le tuve miedo a las agujas. Mi endocrinólogo quedó sorprendido con la precisión."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">M</div>
+          <div>
+            <div class="testi-name">Martha Rodríguez · Bogotá, Cundinamarca</div>
+            <div class="testi-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <div class="testi-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testi-text">"Dudé mucho por el pago contra entrega pero llegó en 4 días perfecto. La app es muy fácil de usar y puedo mandarle el reporte a mi doctor por WhatsApp. Vale cada peso."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">L</div>
+          <div>
+            <div class="testi-name">Lucía Peñaloza · Cali, Valle del Cauca</div>
+            <div class="testi-verified">✓ Compra verificada</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="cta-wrap">
+      <a href="https://68c981-6f.myshopify.com/products/glucomax" class="cta-btn">
+        <strong>Quiero el GlucoMax — Pago al Recibir →</strong>
+        Envío gratis · Llega en 2 a 5 días hábiles a toda Colombia
+      </a>
+      <p class="cta-sub">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No paga nada hasta tener el producto en sus manos. 30 días de garantía. Soporte en español por WhatsApp.
+      </p>
+    </div>
+
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="article-footer">
+    <p class="disclaimer">Este es un publirreportaje. Los testimonios reflejan experiencias individuales y los resultados pueden variar. Consulte siempre con su médico antes de modificar su tratamiento para la diabetes. GlucoMax es un dispositivo de monitoreo domiciliar y no reemplaza la evaluación médica profesional.</p>
+  </footer>
+
+</main>
+
+<script>
+  // Reading Progress Bar
+  const progressBar = document.getElementById('readingProgress');
+  const stickyBar = document.getElementById('stickyBar');
+  let stickyShown = false;
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = Math.min((scrollTop / docHeight) * 100, 100);
+    progressBar.style.width = progress + '%';
+
+    // Show sticky bar after 30% scroll
+    if (progress > 30 && !stickyShown) {
+      stickyBar.classList.add('visible');
+      stickyShown = true;
+    }
+    if (progress < 10 && stickyShown) {
+      stickyBar.classList.remove('visible');
+      stickyShown = false;
+    }
+  });
+</script>
+
+</body>
+</html>
