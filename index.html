@@ -744,7 +744,7 @@
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-text">
     <div class="sticky-bar-title">GlucoMax™ — Sin aguja. Sin tiras.</div>
-    <div class="sticky-bar-price">Solo <strong>$89.900</strong> · Pago al recibir</div>
+    <div class="sticky-bar-price">Solo <strong>$89.900 COP</strong> · Pago al recibir</div>
   </div>
   <a href="https://68c981-6f.myshopify.com/products/glucomax" class="sticky-bar-btn">Pedir ahora →</a>
 </div>
@@ -1007,7 +1007,7 @@
     <p><strong>Hágase un favor. No espere otros catorce años.</strong></p>
 
     <!-- PRODUCT BOX -->
-    <div class="product-box">
+    <div class="product-box" id="ofertaFinal">
       <div class="product-box-header">
         <div class="product-box-title">El Producto</div>
         <div class="product-box-badge">40% OFF</div>
@@ -1189,24 +1189,30 @@
   // Reading Progress Bar
   const progressBar = document.getElementById('readingProgress');
   const stickyBar = document.getElementById('stickyBar');
-  let stickyShown = false;
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = Math.min((scrollTop / docHeight) * 100, 100);
     progressBar.style.width = progress + '%';
-
-    // Show sticky bar after 30% scroll
-    if (progress > 30 && !stickyShown) {
-      stickyBar.classList.add('visible');
-      stickyShown = true;
-    }
-    if (progress < 10 && stickyShown) {
-      stickyBar.classList.remove('visible');
-      stickyShown = false;
-    }
   });
+
+  // Sticky bar aparece SOMENTE quando o lead chega na oferta final
+  const oferta = document.getElementById('ofertaFinal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        stickyBar.classList.add('visible');
+      } else {
+        // Se subir acima da oferta, esconde de novo
+        if (entry.boundingClientRect.top > 0) {
+          stickyBar.classList.remove('visible');
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(oferta);
 </script>
 
 </body>
